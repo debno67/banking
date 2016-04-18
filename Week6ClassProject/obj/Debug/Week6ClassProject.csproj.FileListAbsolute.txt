@@ -1,0 +1,6 @@
+c:\users\deb\documents\visual studio 2015\Projects\Week6ClassProject\Week6ClassProject\bin\Debug\Week6ClassProject.exe.config
+c:\users\deb\documents\visual studio 2015\Projects\Week6ClassProject\Week6ClassProject\obj\Debug\Week6ClassProject.csprojResolveAssemblyReference.cache
+c:\users\deb\documents\visual studio 2015\Projects\Week6ClassProject\Week6ClassProject\bin\Debug\Week6ClassProject.exe
+c:\users\deb\documents\visual studio 2015\Projects\Week6ClassProject\Week6ClassProject\bin\Debug\Week6ClassProject.pdb
+c:\users\deb\documents\visual studio 2015\Projects\Week6ClassProject\Week6ClassProject\obj\Debug\Week6ClassProject.exe
+c:\users\deb\documents\visual studio 2015\Projects\Week6ClassProject\Week6ClassProject\obj\Debug\Week6ClassProject.pdb
