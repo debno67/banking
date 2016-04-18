@@ -13,7 +13,7 @@ namespace Week6ClassProject
         //client acct number
         //random method to generate account number
         //fields
-        private string name = "Lexus Davis";
+        private string name = "Debbie Nolan";
         private int accountNumber = int.Parse("123445678 ");
        
         //properties
@@ -26,6 +26,7 @@ namespace Week6ClassProject
         {
             get { return this.accountNumber; }
             set { this.accountNumber = value; }
+   
         }
         //methods
 
@@ -42,6 +43,7 @@ namespace Week6ClassProject
         {
             this.AccountNumber = accountNumber;
             this.Name = name;
+           
         }
     }
 }

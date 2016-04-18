@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Week6ClassProject
 {
     class Account
     {
+
+
         //accounts class
         //each transaction with date and time (Date & Time Class)
         //+ for deposit 
@@ -18,7 +21,8 @@ namespace Week6ClassProject
         //public void AccountInfo()
 
         //fields
-
+        double deposit;
+        double withdraw;
         double balance;
         string firstName;
         string lastName;
@@ -40,24 +44,38 @@ namespace Week6ClassProject
             get { return this.lastName; }
             set { this.lastName = value; }
         }
-        //withdraw method
-        public void Withdraw()
+        public double Deposit
         {
-            Console.WriteLine("Withdrew amount ${0}");
+            get { return this.deposit; }
+            set { this.deposit = value; }
+        }
+        public double Withdraw
+        {
+            get { return this.withdraw; }
+            set { this.withdraw = value; }
+        }
+
+        //withdraw method
+        public void WithdrawAmount()
+        {
+            Console.WriteLine("Withdrew amount $-{0}");
             double amount = double.Parse(Console.ReadLine());
-            this.balance -= amount;
+            this.Balance -= amount;
+            this.Withdraw = amount;
         }
         //deposit method
-        public void Deposit()
+        public void DepositAmount()
         {
-            Console.WriteLine("Deposit amount ${0}");
+            Console.WriteLine("Deposit amount $+{0}");
             double amount = double.Parse(Console.ReadLine());
-            this.balance += amount;
+            this.Balance += amount;
+            this.Deposit = amount;
 
         }
         //balance method
         public void GetBalance()
         {
+
             Console.WriteLine("Balance, {0}", this.balance);
         }
 
@@ -65,12 +83,15 @@ namespace Week6ClassProject
         public Account()
         {
         }
-        public Account(double balance, string firstName, string lastName)
+        public Account(double balance, string firstName, string lastName, double deposit, double withdraw)
         {
 
             this.Balance = balance;
             this.FirstName = firstName;
             this.LastName = lastName;
+            this.Deposit = deposit;
+            this.Withdraw = withdraw;
+           
         }
     }
 }

@@ -13,19 +13,15 @@ namespace Week6ClassProject
         {
             BankMenu();
             Swag();
-            Account account = new Account();
+            Account Account = new Account();
             Swag();
             Client client = new Client();
             int bankMenu = 0;
+            Random accountNumberGenerator = new Random();  //object instantiation
+            client.AccountNumber = accountNumberGenerator.Next(100000, 999999);
             // string playAgain = "N";
-           // string accountsummary = ("AccountSummary.txt");
-            StreamWriter writer = new StreamWriter("AccountsSummary.txt");
-            using (writer)
-            {
-                writer.WriteLine("Lexus C. M. Davis Banking");
-                writer.WriteLine("Swagger, USA");
-                writer.WriteLine("accountNumber");
-            }
+            // string accountsummary = ("AccountSummary.txt");
+
             do
             {
                 Console.WriteLine("If you want to pursue more than one transaction press the number that corresponds to what you want to do. \nEx: If you want to check balance press 2, if you want to Deposit money after checking balance press 3.");
@@ -42,26 +38,26 @@ namespace Week6ClassProject
                         break;
 
                     case 2:
-
-                        account.GetBalance();
+                        Console.WriteLine("\n" + client.AccountNumber);
+                        Account.GetBalance();
                         Swag();
                         break;
 
                     case 3:
-                        account.Deposit();
-                        account.GetBalance();
+                        Account.DepositAmount();
+                        Account.GetBalance();
                         Swag();
                         break;
 
                     case 4:
-                        account.Withdraw();
-                        account.GetBalance();
+                        Account.WithdrawAmount();
+                        Account.GetBalance();
                         Swag();
                         break;
 
                     case 5:
                         Console.WriteLine("Exit");
-                        Console.WriteLine("Thank you for banking with Lexus C. M. Davis Banking, \"Where we keep your money out of reach from the Feds!\"");
+                        Console.WriteLine("Thank you for banking with us.");
                         Swag();
                         break;
 
@@ -71,6 +67,16 @@ namespace Week6ClassProject
                         break;
                 }
             } while (bankMenu != 5);
+            StreamWriter writer = new StreamWriter("AccountsSummary.txt");
+            using (writer)
+            {
+                writer.WriteLine(client.Name);
+                writer.WriteLine(client.AccountNumber);
+                writer.WriteLine(DateTime.Now);
+                writer.WriteLine("Withdraw -: {0}", Account.Withdraw);
+                writer.WriteLine("Deposit +: {0}", Account.Deposit) ;
+                writer.WriteLine("Account Balance; {0}", Account.Balance);
+            }
         }
         //while (playAgain == "y");
         public static void BankMenu()
@@ -82,7 +88,7 @@ namespace Week6ClassProject
             //4. withdraw
             //5. exit
             Console.WriteLine("-----------------------------");
-            Console.WriteLine("**Lexus C. M. Davis Banking**");
+            Console.WriteLine("**Nolan Trust**");
             Console.WriteLine("-----------------------------");
             Swag(); //spacer 
             Console.WriteLine("Choose a menu option.");
